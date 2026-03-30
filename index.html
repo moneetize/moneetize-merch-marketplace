@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moneetize Marketplace — Shop branded merch, pay with Tripto Tokens, USDT, or USD. T-shirts, mugs, caps, beanies, thermals and more.">
+  <title>Moneetize — Branded Merchandise Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ======= HEADER ======= -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <img src="logo-white.svg" alt="Moneetize" class="logo-img">
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#categories" class="active">Shop</a>
+          <a href="#products">Products</a>
+          <a href="#deals">Deals</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#app-cta">Get App</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="search-toggle" id="searchToggle" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+
+          <button class="cart-toggle" id="cartToggle" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+
+          <a href="#app-cta" class="btn-get-app">Get the App</a>
+
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileClose">✕</button>
+    <a href="#categories" onclick="closeMobileMenu()">Shop</a>
+    <a href="#products" onclick="closeMobileMenu()">Products</a>
+    <a href="#deals" onclick="closeMobileMenu()">Deals</a>
+    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#app-cta" onclick="closeMobileMenu()">Get App</a>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="search-close" id="searchClose">✕</button>
+    <div class="search-overlay-content">
+      <input type="text" placeholder="Search for merch…" id="searchInput" autocomplete="off">
+    </div>
+  </div>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Rock the Brand<span class="highlight">.</span><br>Pay Your Way<span class="highlight">.</span></h1>
+          <p>Exclusive Moneetize branded merch — apparel, accessories, tech gear, home decor &amp; more. Pay with <strong>Tripto Tokens</strong>, <strong>USDT</strong>, or <strong>USD</strong>.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn-primary">
+              <span>Shop Now</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#app-cta" class="btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              <span>Get the App</span>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">15K+</div>
+              <div class="stat-label">App Users</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Payment Options</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-product-grid">
+            <div class="hero-product-card">
+              <img src="images/tshirt.png" alt="Moneetize T-Shirt">
+              <div class="price-tag">$29.99 · 150 TT</div>
+            </div>
+            <div class="hero-product-card">
+              <img src="images/hoodie.png" alt="Moneetize Hoodie">
+              <div class="price-tag">$59.99 · 300 TT</div>
+            </div>
+            <div class="hero-product-card">
+              <img src="images/mug.png" alt="Moneetize Mug">
+              <div class="price-tag">$14.99 · 75 TT</div>
+            </div>
+            <div class="hero-product-card">
+              <img src="images/cap.png" alt="Moneetize Cap">
+              <div class="price-tag">$24.99 · 125 TT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PAYMENT BANNER ======= -->
+  <section class="payment-banner">
+    <div class="container">
+      <div class="payment-banner-inner">
+        <div class="payment-method">
+          <div class="payment-icon tripto">TT</div>
+          <div>
+            <strong>Tripto Tokens</strong>
+            <small style="display:block;color:var(--text-muted);font-size:0.75rem;">Earn & spend in-app</small>
+          </div>
+        </div>
+        <div class="payment-divider"></div>
+        <div class="payment-method">
+          <div class="payment-icon usdt">₮</div>
+          <div>
+            <strong>USDT</strong>
+            <small style="display:block;color:var(--text-muted);font-size:0.75rem;">Tether stablecoin</small>
+          </div>
+        </div>
+        <div class="payment-divider"></div>
+        <div class="payment-method">
+          <div class="payment-icon usd">$</div>
+          <div>
+            <strong>USD</strong>
+            <small style="display:block;color:var(--text-muted);font-size:0.75rem;">Credit / Debit cards</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CATEGORIES ======= -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Shop by Category</h2>
+        <p>Find your favorite Moneetize branded gear</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card reveal active" data-category="all" onclick="filterCategory('all')">
+          <span class="category-icon">🛍️</span>
+          <h3>All Items</h3>
+          <span>100+ products</span>
+        </div>
+        <div class="category-card reveal" data-category="apparel" onclick="filterCategory('apparel')">
+          <span class="category-icon">👕</span>
+          <h3>Apparel</h3>
+          <span>T-Shirts, Hoodies, Socks</span>
+        </div>
+        <div class="category-card reveal" data-category="headwear" onclick="filterCategory('headwear')">
+          <span class="category-icon">🧢</span>
+          <h3>Headwear</h3>
+          <span>Caps, Beanies, Headbands</span>
+        </div>
+        <div class="category-card reveal" data-category="drinkware" onclick="filterCategory('drinkware')">
+          <span class="category-icon">☕</span>
+          <h3>Drinkware</h3>
+          <span>Mugs, Thermals, Bottles</span>
+        </div>
+        <div class="category-card reveal" data-category="accessories" onclick="filterCategory('accessories')">
+          <span class="category-icon">🔑</span>
+          <h3>Accessories</h3>
+          <span>Keychains, Pins, Lanyards</span>
+        </div>
+        <div class="category-card reveal" data-category="home" onclick="filterCategory('home')">
+          <span class="category-icon">🏠</span>
+          <h3>Home & Office</h3>
+          <span>Magnets, Stickers, Pads</span>
+        </div>
+        <div class="category-card reveal" data-category="tech" onclick="filterCategory('tech')">
+          <span class="category-icon">📱</span>
+          <h3>Tech Gear</h3>
+          <span>Cases, Chargers, Sleeves</span>
+        </div>
+        <div class="category-card reveal" data-category="premium" onclick="filterCategory('premium')">
+          <span class="category-icon">🏆</span>
+          <h3>Premium</h3>
+          <span>Backpacks, Bags, Shades</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PRODUCTS ======= -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Featured Merch</h2>
+        <p>Premium branded gear for the Moneetize community</p>
+      </div>
+
+      <div class="products-toolbar reveal">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all" onclick="filterProducts('all')">All</button>
+          <button class="filter-tab" data-filter="new" onclick="filterProducts('new')">New Arrivals</button>
+          <button class="filter-tab" data-filter="hot" onclick="filterProducts('hot')">Best Sellers</button>
+          <button class="filter-tab" data-filter="sale" onclick="filterProducts('sale')">On Sale</button>
+        </div>
+        <div class="currency-toggle">
+          <button class="currency-btn active" data-currency="usd" onclick="switchCurrency('usd')">USD</button>
+          <button class="currency-btn" data-currency="tripto" onclick="switchCurrency('tripto')">Tripto</button>
+          <button class="currency-btn" data-currency="usdt" onclick="switchCurrency('usdt')">USDT</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- ===== APPAREL ===== -->
+        <div class="product-card reveal" data-category="apparel" data-tag="new">
+          <div class="product-image">
+            <img src="images/tshirt.png" alt="Classic Logo Tee">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Classic Logo Tee</h3>
+            <p class="product-desc">Premium cotton tee with embroidered logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(128)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="29.99" data-tripto="150" data-usdt="29.99">$29.99</span><span class="price-alt">≈ 150 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Classic Logo Tee', 29.99, 'images/tshirt.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="hot">
+          <div class="product-image">
+            <img src="images/hoodie.png" alt="Signature Hoodie">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Signature Hoodie</h3>
+            <p class="product-desc">Heavyweight fleece hoodie with chest logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(96)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="59.99" data-tripto="300" data-usdt="59.99">$59.99</span><span class="price-alt">≈ 300 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Signature Hoodie', 59.99, 'images/hoodie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="sale">
+          <div class="product-image">
+            <img src="images/tshirt.png" alt="Oversized Logo Tee">
+            <span class="product-badge sale">Sale</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Oversized Logo Tee</h3>
+            <p class="product-desc">Relaxed fit tee with oversized back print</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(67)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="34.99" data-tripto="175" data-usdt="34.99">$34.99</span><span class="price-alt">≈ 175 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Oversized Logo Tee', 34.99, 'images/tshirt.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="hot">
+          <div class="product-image">
+            <img src="images/hoodie.png" alt="Zip-Up Hoodie">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Zip-Up Hoodie</h3>
+            <p class="product-desc">Full-zip hoodie with dual pockets & logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(89)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="64.99" data-tripto="325" data-usdt="64.99">$64.99</span><span class="price-alt">≈ 325 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Zip-Up Hoodie', 64.99, 'images/hoodie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="new">
+          <div class="product-image">
+            <img src="images/tshirt.png" alt="Logo Crew Socks">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Crew Socks (3-Pack)</h3>
+            <p class="product-desc">Combed cotton socks with logo pattern</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(41)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="16.99" data-tripto="85" data-usdt="16.99">$16.99</span><span class="price-alt">≈ 85 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Crew Socks', 16.99, 'images/tshirt.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="new">
+          <div class="product-image">
+            <img src="images/hoodie.png" alt="Branded Bandana">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Branded Bandana</h3>
+            <p class="product-desc">Multi-use bandana with repeating logo print</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(22)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="12.99" data-tripto="65" data-usdt="12.99">$12.99</span><span class="price-alt">≈ 65 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Branded Bandana', 12.99, 'images/hoodie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="apparel" data-tag="new">
+          <div class="product-image">
+            <img src="images/keychain.png" alt="Silicone Wristband">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Silicone Wristband</h3>
+            <p class="product-desc">Debossed logo wristband — green & black</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(37)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="4.99" data-tripto="25" data-usdt="4.99">$4.99</span><span class="price-alt">≈ 25 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Silicone Wristband', 4.99, 'images/keychain.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== HEADWEAR ===== -->
+        <div class="product-card reveal" data-category="headwear" data-tag="hot">
+          <div class="product-image">
+            <img src="images/cap.png" alt="Snapback Cap">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Snapback Cap</h3>
+            <p class="product-desc">Adjustable snapback with embroidered logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(112)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="24.99" data-tripto="125" data-usdt="24.99">$24.99</span><span class="price-alt">≈ 125 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Snapback Cap', 24.99, 'images/cap.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="headwear" data-tag="sale">
+          <div class="product-image">
+            <img src="images/beanie.png" alt="Knit Beanie">
+            <span class="product-badge sale">Sale</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Knit Beanie</h3>
+            <p class="product-desc">Soft-knit beanie with woven logo patch</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(58)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="19.99" data-tripto="100" data-usdt="19.99">$19.99</span><span class="price-alt">≈ 100 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Knit Beanie', 19.99, 'images/beanie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="headwear" data-tag="new">
+          <div class="product-image">
+            <img src="images/beanie.png" alt="Sport Headband">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Sport Headband</h3>
+            <p class="product-desc">Moisture-wicking headband with logo</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(19)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="9.99" data-tripto="50" data-usdt="9.99">$9.99</span><span class="price-alt">≈ 50 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Sport Headband', 9.99, 'images/beanie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== DRINKWARE ===== -->
+        <div class="product-card reveal" data-category="drinkware" data-tag="new">
+          <div class="product-image">
+            <img src="images/mug.png" alt="Moneetize Mug">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Branded Ceramic Mug</h3>
+            <p class="product-desc">12 oz ceramic mug with full wrap design</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(74)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="14.99" data-tripto="75" data-usdt="14.99">$14.99</span><span class="price-alt">≈ 75 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Branded Ceramic Mug', 14.99, 'images/mug.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="drinkware" data-tag="new">
+          <div class="product-image">
+            <img src="images/thermal.png" alt="Insulated Thermal Bottle">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Insulated Thermal Bottle</h3>
+            <p class="product-desc">24-hour insulated stainless steel bottle</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(43)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="34.99" data-tripto="175" data-usdt="34.99">$34.99</span><span class="price-alt">≈ 175 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Insulated Thermal Bottle', 34.99, 'images/thermal.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="drinkware" data-tag="hot">
+          <div class="product-image">
+            <img src="images/thermal.png" alt="XL Water Bottle">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>XL Water Bottle</h3>
+            <p class="product-desc">32 oz BPA-free sports bottle with logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(56)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="22.99" data-tripto="115" data-usdt="22.99">$22.99</span><span class="price-alt">≈ 115 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('XL Water Bottle', 22.99, 'images/thermal.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="drinkware" data-tag="new">
+          <div class="product-image">
+            <img src="images/mug.png" alt="Coaster Set">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Coaster Set (4-Pack)</h3>
+            <p class="product-desc">Cork-backed coasters with branded designs</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(31)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="12.99" data-tripto="65" data-usdt="12.99">$12.99</span><span class="price-alt">≈ 65 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Coaster Set', 12.99, 'images/mug.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ACCESSORIES ===== -->
+        <div class="product-card reveal" data-category="accessories" data-tag="hot">
+          <div class="product-image">
+            <img src="images/keychain.png" alt="Metal Logo Keychain">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Metal Logo Keychain</h3>
+            <p class="product-desc">Chrome metal keychain with engraved logo</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(87)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="9.99" data-tripto="50" data-usdt="9.99">$9.99</span><span class="price-alt">≈ 50 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Metal Logo Keychain', 9.99, 'images/keychain.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="accessories" data-tag="new">
+          <div class="product-image">
+            <img src="images/keychain.png" alt="Enamel Pin">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Enamel Pin Set</h3>
+            <p class="product-desc">Collectible hard-enamel pins (2-pack)</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(63)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="7.99" data-tripto="40" data-usdt="7.99">$7.99</span><span class="price-alt">≈ 40 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Enamel Pin Set', 7.99, 'images/keychain.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="accessories" data-tag="new">
+          <div class="product-image">
+            <img src="images/keychain.png" alt="Branded Lanyard">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Branded Lanyard</h3>
+            <p class="product-desc">Breakaway lanyard with repeating logo</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(28)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="8.99" data-tripto="45" data-usdt="8.99">$8.99</span><span class="price-alt">≈ 45 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Branded Lanyard', 8.99, 'images/keychain.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="accessories" data-tag="hot">
+          <div class="product-image">
+            <img src="images/phonecase.png" alt="Pop Socket Grip">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Phone Grip / Pop Socket</h3>
+            <p class="product-desc">Collapsible grip with logo design</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(74)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="9.99" data-tripto="50" data-usdt="9.99">$9.99</span><span class="price-alt">≈ 50 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Phone Grip', 9.99, 'images/phonecase.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== HOME & OFFICE ===== -->
+        <div class="product-card reveal" data-category="home" data-tag="hot">
+          <div class="product-image">
+            <img src="images/magnet.png" alt="Fridge Magnet">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Die-Cut Fridge Magnet</h3>
+            <p class="product-desc">Logo-shaped premium fridge magnet</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(52)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="5.99" data-tripto="30" data-usdt="5.99">$5.99</span><span class="price-alt">≈ 30 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Die-Cut Fridge Magnet', 5.99, 'images/magnet.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="home" data-tag="sale">
+          <div class="product-image">
+            <img src="images/stickers.png" alt="Sticker Pack">
+            <span class="product-badge sale">Sale</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Vinyl Sticker Pack (10-Pack)</h3>
+            <p class="product-desc">Waterproof die-cut stickers for laptops</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(143)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="6.99" data-tripto="35" data-usdt="6.99">$6.99</span><span class="price-alt">≈ 35 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Vinyl Sticker Pack', 6.99, 'images/stickers.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="home" data-tag="new">
+          <div class="product-image">
+            <img src="images/magnet.png" alt="Extended Mouse Pad">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Extended Desk Pad</h3>
+            <p class="product-desc">XL mouse pad with subtle logo branding</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(34)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="19.99" data-tripto="100" data-usdt="19.99">$19.99</span><span class="price-alt">≈ 100 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Extended Desk Pad', 19.99, 'images/magnet.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="home" data-tag="new">
+          <div class="product-image">
+            <img src="images/tshirt.png" alt="Canvas Tote Bag">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Canvas Tote Bag</h3>
+            <p class="product-desc">Heavy-duty canvas tote with logo print</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(49)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="14.99" data-tripto="75" data-usdt="14.99">$14.99</span><span class="price-alt">≈ 75 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Canvas Tote Bag', 14.99, 'images/tshirt.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== TECH ===== -->
+        <div class="product-card reveal" data-category="tech" data-tag="hot">
+          <div class="product-image">
+            <img src="images/phonecase.png" alt="Phone Case">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Phone Case</h3>
+            <p class="product-desc">Shockproof case — iPhone & Samsung</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(91)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="19.99" data-tripto="100" data-usdt="19.99">$19.99</span><span class="price-alt">≈ 100 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Phone Case', 19.99, 'images/phonecase.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="tech" data-tag="new">
+          <div class="product-image">
+            <img src="images/phonecase.png" alt="Wireless Charger">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Wireless Charger</h3>
+            <p class="product-desc">Qi-compatible pad with etched logo</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(27)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="29.99" data-tripto="150" data-usdt="29.99">$29.99</span><span class="price-alt">≈ 150 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Wireless Charger', 29.99, 'images/phonecase.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="tech" data-tag="new">
+          <div class="product-image">
+            <img src="images/phonecase.png" alt="Laptop Sleeve">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Neoprene Laptop Sleeve</h3>
+            <p class="product-desc">13" / 15" sleeve with logo accent</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(38)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="24.99" data-tripto="125" data-usdt="24.99">$24.99</span><span class="price-alt">≈ 125 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Neoprene Laptop Sleeve', 24.99, 'images/phonecase.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="tech" data-tag="new">
+          <div class="product-image">
+            <img src="images/keychain.png" alt="Branded USB Drive">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo USB Drive (64GB)</h3>
+            <p class="product-desc">USB 3.0 flash drive with logo casing</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(18)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="14.99" data-tripto="75" data-usdt="14.99">$14.99</span><span class="price-alt">≈ 75 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo USB Drive', 14.99, 'images/keychain.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="tech" data-tag="sale">
+          <div class="product-image">
+            <img src="images/phonecase.png" alt="Webcam Cover">
+            <span class="product-badge sale">Sale</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Webcam Cover (3-Pack)</h3>
+            <p class="product-desc">Ultra-thin slider cover with logo</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(45)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="5.99" data-tripto="30" data-usdt="5.99">$5.99</span><span class="price-alt">≈ 30 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Webcam Cover', 5.99, 'images/phonecase.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PREMIUM ===== -->
+        <div class="product-card reveal" data-category="premium" data-tag="hot">
+          <div class="product-image">
+            <img src="images/hoodie.png" alt="Tech Backpack">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Tech Backpack</h3>
+            <p class="product-desc">Padded laptop backpack with logo tag</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(72)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="79.99" data-tripto="400" data-usdt="79.99">$79.99</span><span class="price-alt">≈ 400 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Tech Backpack', 79.99, 'images/hoodie.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="premium" data-tag="new">
+          <div class="product-image">
+            <img src="images/magnet.png" alt="Branded Notebook">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Hardcover Journal</h3>
+            <p class="product-desc">A5 lined notebook with logo foil stamp</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(34)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="18.99" data-tripto="95" data-usdt="18.99">$18.99</span><span class="price-alt">≈ 95 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Hardcover Journal', 18.99, 'images/magnet.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="premium" data-tag="new">
+          <div class="product-image">
+            <img src="images/cap.png" alt="Logo Sunglasses">
+            <span class="product-badge new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Logo Sunglasses</h3>
+            <p class="product-desc">UV400 shades with logo on temple arm</p>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(26)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="24.99" data-tripto="125" data-usdt="24.99">$24.99</span><span class="price-alt">≈ 125 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Logo Sunglasses', 24.99, 'images/cap.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="premium" data-tag="hot">
+          <div class="product-image">
+            <img src="images/tshirt.png" alt="Drawstring Bag">
+            <span class="product-badge hot">Hot</span>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <h3>Drawstring Gym Bag</h3>
+            <p class="product-desc">Lightweight bag with large logo print</p>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(55)</span></div>
+            <div class="product-pricing">
+              <div><span class="price" data-usd="12.99" data-tripto="65" data-usdt="12.99">$12.99</span><span class="price-alt">≈ 65 Tripto Tokens</span></div>
+              <button class="btn-add-cart" onclick="addToCart('Drawstring Gym Bag', 12.99, 'images/tshirt.png')">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= HOW IT WORKS ======= -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>How It Works</h2>
+        <p>Three simple steps to get your Moneetize merch</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Browse & Select</h3>
+          <p>Explore our collection of branded merchandise — from tees to thermals.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Pay Your Way</h3>
+          <p>Checkout with Tripto Tokens you've earned, USDT, or traditional USD.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Get Delivered</h3>
+          <p>Your exclusive Moneetize gear ships right to your door worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= DEALS ======= -->
+  <section class="deals" id="deals">
+    <div class="container">
+      <div class="deals-card reveal">
+        <div class="deals-content">
+          <div class="deals-badge">🔥 Limited Time</div>
+          <h2>Early Adopter Bundle<span class="accent-dot">.</span></h2>
+          <p>Get the T-Shirt + Cap + Mug bundle at <strong>30% off</strong> when you pay with Tripto Tokens. Exclusive for app users.</p>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="number" id="days">02</span>
+              <span class="label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="number" id="hours">18</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="number" id="minutes">45</span>
+              <span class="label">Mins</span>
+            </div>
+            <div class="countdown-item">
+              <span class="number" id="seconds">12</span>
+              <span class="label">Secs</span>
+            </div>
+          </div>
+          <a href="#products" class="btn-primary">
+            Grab the Deal
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="deals-visual">
+          <img src="images/tshirt.png" alt="Deal Bundle" class="deal-product">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TESTIMONIALS ======= -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>What Our Community Says</h2>
+        <p>Hear from fellow Moneetize app users</p>
+      </div>
+      <div class="testimonial-carousel reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"I used my Tripto Tokens to buy the hoodie and it's incredible quality. Love that I can earn rewards and actually spend them on real merch!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JR</div>
+              <div class="testimonial-author-info">
+                <div class="name">James R.</div>
+                <div class="role">App User · Tripto Holder</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"The beanie is my daily wear now. Paid with USDT — transaction was instant. Shipping was fast too. 10/10 would recommend."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SK</div>
+              <div class="testimonial-author-info">
+                <div class="name">Sarah K.</div>
+                <div class="role">App User · Crypto Enthusiast</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"Bought the thermal bottle with USD — super smooth checkout. The print quality is top-notch and it keeps my coffee hot all day."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MT</div>
+              <div class="testimonial-author-info">
+                <div class="name">Mike T.</div>
+                <div class="role">App User · Early Adopter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-btn" id="prevTestimonial" aria-label="Previous">‹</button>
+          <div class="testimonial-dots" id="testimonialDots">
+            <div class="testimonial-dot active"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+          </div>
+          <button class="testimonial-btn" id="nextTestimonial" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= APP CTA ======= -->
+  <section class="app-cta" id="app-cta">
+    <div class="container">
+      <div class="app-cta-card reveal">
+        <h2>Shop Easier on the App<span class="accent-dot">.</span></h2>
+        <p>Download the Moneetize app to earn Tripto Tokens, unlock exclusive deals, and shop branded merch on the go.</p>
+        <div class="app-benefits">
+          <div class="app-benefit"><span class="check">✓</span> Earn Tripto Tokens</div>
+          <div class="app-benefit"><span class="check">✓</span> Exclusive App Deals</div>
+          <div class="app-benefit"><span class="check">✓</span> Track Your Orders</div>
+          <div class="app-benefit"><span class="check">✓</span> Faster Checkout</div>
+        </div>
+        <div class="app-store-buttons">
+          <a href="#" class="store-btn">
+            <span class="store-icon">🍎</span>
+            <span class="store-info">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </span>
+          </a>
+          <a href="#" class="store-btn">
+            <span class="store-icon">▶</span>
+            <span class="store-info">
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="logo-white.svg" alt="Moneetize" class="logo-img">
+          </a>
+          <p>Your gateway to branded merch — powered by Tripto Tokens. Earn, shop, and represent the community.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-link" aria-label="Discord">💬</a>
+            <a href="#" class="social-link" aria-label="Telegram">✈</a>
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#categories">Apparel</a></li>
+            <li><a href="#categories">Accessories</a></li>
+            <li><a href="#categories">Tech Gear</a></li>
+            <li><a href="#categories">Premium</a></li>
+            <li><a href="#deals">Deals</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Stay Updated</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-sm);">Get notified about new drops &amp; exclusive deals.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed! 🎉');">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Moneetize. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart (<span id="cartCount">0</span>)</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="total-label">Total</span>
+        <span class="total-price" id="cartTotal">$0.00</span>
+      </div>
+      <div class="cart-payment-select">
+        <label>Pay with</label>
+        <div class="cart-payment-options">
+          <button class="cart-pay-option active" data-pay="usd" onclick="selectPayment('usd')">💵 USD</button>
+          <button class="cart-pay-option" data-pay="tripto" onclick="selectPayment('tripto')">🟢 Tripto</button>
+          <button class="cart-pay-option" data-pay="usdt" onclick="selectPayment('usdt')">₮ USDT</button>
+        </div>
+      </div>
+      <button class="btn-checkout" onclick="showToast('Opening Moneetize App for checkout…')">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
