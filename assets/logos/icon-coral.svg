@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="coral-bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4906E"/>
+      <stop offset="1" stop-color="#E8699A"/>
+    </linearGradient>
+    <linearGradient id="coral-sh" x1="100" y1="56" x2="100" y2="144" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+  <path d="M100,14 C152,14 186,48 186,100 C186,152 152,186 100,186 C48,186 14,152 14,100 C14,48 48,14 100,14Z" fill="url(#coral-bg)"/>
+  <path d="M65,62 L65,138 L102,100Z" fill="#fff"/>
+  <path d="M100,62 L134,62 C137.3,62 140,64.7 140,68 L140,132 C140,135.3 137.3,138 134,138 L100,138Z" fill="url(#coral-sh)"/>
+</svg>
