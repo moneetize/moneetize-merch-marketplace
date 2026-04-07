@@ -72,6 +72,25 @@
     .rule-card.dont { border-left: 3px solid #EF5350; }
     .brand-footer { padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 3rem; text-align: center; }
     .brand-footer p { font-size: .85rem; color: var(--text3); }
+
+    /* Logo lockup previews */
+    .lockup-preview { display: flex; align-items: center; justify-content: center; padding: 2.5rem; height: 200px; }
+    .lockup-preview.dark-bg { background: var(--card); }
+    .lockup-preview.light-bg { background: #f5f5f5; }
+    .lockup-horizontal { display: flex; align-items: center; gap: 12px; }
+    .lockup-horizontal .lockup-text { display: flex; flex-direction: column; }
+    .lockup-horizontal .lockup-wordmark { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.6rem; letter-spacing: -0.03em; line-height: 1.1; }
+    .lockup-horizontal .lockup-slogan { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.02em; }
+    .lockup-vertical { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+    .lockup-vertical .lockup-wordmark { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: -0.03em; line-height: 1.1; }
+    .lockup-vertical .lockup-slogan { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.02em; }
+    /* Dark bg text = white */
+    .dark-bg .lockup-wordmark { color: #fff; }
+    .dark-bg .lockup-slogan { background: linear-gradient(135deg, var(--coral-s), var(--coral-e)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    /* Light bg text = black */
+    .light-bg .lockup-wordmark { color: #1C1C1E; }
+    .light-bg .lockup-slogan { background: linear-gradient(135deg, var(--coral-s), var(--coral-e)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
     @media (max-width: 768px) { .logo-grid, .palette-grid, .rules-grid { grid-template-columns: 1fr 1fr; } .type-meta { flex-direction: column; gap: 1rem; } }
     @media (max-width: 480px) { .logo-grid, .palette-grid { grid-template-columns: 1fr; } }
   </style>
@@ -93,6 +112,8 @@
     </div>
   </section>
   <main class="container">
+
+    <!-- ===== ICON VARIANTS ===== -->
     <section class="section">
       <h2 class="section-title">Icon Variants</h2>
       <p class="section-desc">The Moneetize icon mark in all available color modes. Select a variant below.</p>
@@ -131,6 +152,70 @@
       </div>
     </section>
     <hr>
+
+    <!-- ===== HORIZONTAL LOGO WITH SLOGAN ===== -->
+    <section class="section">
+      <h2 class="section-title">Horizontal Logo with Slogan</h2>
+      <p class="section-desc">The full horizontal lockup: icon + wordmark + slogan. Use for header bars, navigation, and marketing materials.</p>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="lockup-preview dark-bg">
+            <div class="lockup-horizontal">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="52" height="52"><defs><linearGradient id="hl-fade" x1="156.2" y1="101" x2="84.9" y2="101" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0.2"/></linearGradient></defs><path d="M89.6,112.7 C83.2,106.3 83.2,95.9 89.6,89.5 L128.2,50.9 C138.5,40.6 156.2,47.9 156.2,62.5 V139.7 C156.2,154.3 138.5,161.7 128.2,151.3Z" fill="url(#hl-fade)"/><path d="M112.7,112.7 C119.1,106.3 119.1,95.9 112.7,89.5 L74.1,50.9 C63.9,40.6 46.2,47.9 46.2,62.5 V139.7 C46.2,154.3 63.9,161.7 74.1,151.3Z" fill="#fff"/></svg>
+              <div class="lockup-text">
+                <span class="lockup-wordmark">moneetize</span>
+                <span class="lockup-slogan">Spending&hellip; with benefits</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-meta"><h4>Horizontal + Slogan (Dark)</h4><p>For dark backgrounds &mdash; navigation, headers</p></div>
+        </div>
+        <div class="logo-card">
+          <div class="lockup-preview light-bg">
+            <div class="lockup-horizontal">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="52" height="52"><defs><linearGradient id="hl-bg2" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4906E"/><stop offset="1" stop-color="#E8699A"/></linearGradient><linearGradient id="hl-fade2" x1="156.2" y1="101" x2="84.9" y2="101" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient></defs><path d="M100,0 C25.2,0 0,25.2 0,100 C0,174.8 25.2,200 100,200 C174.8,200 200,174.8 200,100 C200,25.2 174.9,0 100,0Z" fill="url(#hl-bg2)"/><path d="M89.6,112.7 C83.2,106.3 83.2,95.9 89.6,89.5 L128.2,50.9 C138.5,40.6 156.2,47.9 156.2,62.5 V139.7 C156.2,154.3 138.5,161.7 128.2,151.3Z" fill="url(#hl-fade2)"/><path d="M112.7,112.7 C119.1,106.3 119.1,95.9 112.7,89.5 L74.1,50.9 C63.9,40.6 46.2,47.9 46.2,62.5 V139.7 C46.2,154.3 63.9,161.7 74.1,151.3Z" fill="#fff"/></svg>
+              <div class="lockup-text">
+                <span class="lockup-wordmark">moneetize</span>
+                <span class="lockup-slogan">Spending&hellip; with benefits</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-meta"><h4>Horizontal + Slogan (Light)</h4><p>For light backgrounds &mdash; print, marketing</p></div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <!-- ===== VERTICAL LOGO WITH SLOGAN ===== -->
+    <section class="section">
+      <h2 class="section-title">Vertical Logo with Slogan</h2>
+      <p class="section-desc">The stacked vertical lockup: icon above wordmark above slogan. Use for hero sections, splash screens, and merchandise.</p>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="lockup-preview dark-bg">
+            <div class="lockup-vertical">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="56" height="56"><defs><linearGradient id="vl-fade" x1="156.2" y1="101" x2="84.9" y2="101" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0.2"/></linearGradient></defs><path d="M89.6,112.7 C83.2,106.3 83.2,95.9 89.6,89.5 L128.2,50.9 C138.5,40.6 156.2,47.9 156.2,62.5 V139.7 C156.2,154.3 138.5,161.7 128.2,151.3Z" fill="url(#vl-fade)"/><path d="M112.7,112.7 C119.1,106.3 119.1,95.9 112.7,89.5 L74.1,50.9 C63.9,40.6 46.2,47.9 46.2,62.5 V139.7 C46.2,154.3 63.9,161.7 74.1,151.3Z" fill="#fff"/></svg>
+              <span class="lockup-wordmark">moneetize</span>
+              <span class="lockup-slogan">Spending&hellip; with benefits</span>
+            </div>
+          </div>
+          <div class="logo-meta"><h4>Vertical + Slogan (Dark)</h4><p>For dark backgrounds &mdash; splash screens, merch</p></div>
+        </div>
+        <div class="logo-card">
+          <div class="lockup-preview light-bg">
+            <div class="lockup-vertical">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="56" height="56"><defs><linearGradient id="vl-bg2" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4906E"/><stop offset="1" stop-color="#E8699A"/></linearGradient><linearGradient id="vl-fade2" x1="156.2" y1="101" x2="84.9" y2="101" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient></defs><path d="M100,0 C25.2,0 0,25.2 0,100 C0,174.8 25.2,200 100,200 C174.8,200 200,174.8 200,100 C200,25.2 174.9,0 100,0Z" fill="url(#vl-bg2)"/><path d="M89.6,112.7 C83.2,106.3 83.2,95.9 89.6,89.5 L128.2,50.9 C138.5,40.6 156.2,47.9 156.2,62.5 V139.7 C156.2,154.3 138.5,161.7 128.2,151.3Z" fill="url(#vl-fade2)"/><path d="M112.7,112.7 C119.1,106.3 119.1,95.9 112.7,89.5 L74.1,50.9 C63.9,40.6 46.2,47.9 46.2,62.5 V139.7 C46.2,154.3 63.9,161.7 74.1,151.3Z" fill="#fff"/></svg>
+              <span class="lockup-wordmark">moneetize</span>
+              <span class="lockup-slogan">Spending&hellip; with benefits</span>
+            </div>
+          </div>
+          <div class="logo-meta"><h4>Vertical + Slogan (Light)</h4><p>For light backgrounds &mdash; print, signage</p></div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <!-- ===== COLOR PALETTE ===== -->
     <section class="section">
       <h2 class="section-title">Color Palette</h2>
       <p class="section-desc">The official Moneetize brand gradient palette.</p>
@@ -144,6 +229,8 @@
       </div>
     </section>
     <hr>
+
+    <!-- ===== TYPOGRAPHY ===== -->
     <section class="section">
       <h2 class="section-title">Typography</h2>
       <p class="section-desc">The Moneetize brand uses Nunito Black as its official wordmark typeface.</p>
@@ -159,6 +246,8 @@
       </div>
     </section>
     <hr>
+
+    <!-- ===== USAGE GUIDELINES ===== -->
     <section class="section">
       <h2 class="section-title">Usage Guidelines</h2>
       <p class="section-desc">Follow these rules to maintain brand consistency across all touchpoints.</p>
