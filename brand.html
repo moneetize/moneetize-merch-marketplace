@@ -20,57 +20,49 @@
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-
-    /* Header */
     .brand-header { padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(13,13,13,.92); backdrop-filter: blur(20px); z-index: 100; }
     .brand-header .container { display: flex; align-items: center; justify-content: space-between; }
     .brand-header .logo { display: flex; align-items: center; gap: .5rem; }
     .brand-header .logo-wordmark { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem; letter-spacing: -0.03em; }
     .back-link { font-size: .9rem; color: var(--text2); padding: .5rem 1.2rem; border: 1px solid var(--border2); border-radius: 999px; transition: .2s; }
     .back-link:hover { color: var(--text); border-color: var(--coral-s); }
-
-    /* Hero */
     .brand-hero { padding: 5rem 0 3rem; text-align: center; }
     .brand-hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 700; margin-bottom: 1rem; }
     .brand-hero h1 span { background: linear-gradient(135deg, var(--coral-s), var(--coral-e)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .brand-hero p { color: var(--text2); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
-
-    /* Section */
     .section { padding: 3rem 0; }
     .section-title { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: .5rem; }
     .section-desc { color: var(--text2); font-size: .95rem; margin-bottom: 2rem; }
     hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
-
-    /* Logo Grid */
-    .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+    .color-selector { display: flex; gap: .5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .color-btn { padding: .5rem 1.2rem; border-radius: 999px; font-size: .85rem; font-weight: 600; cursor: pointer; transition: .2s; border: 1px solid var(--border2); background: var(--card); color: var(--text2); }
+    .color-btn:hover { color: var(--text); border-color: var(--text3); }
+    .color-btn.active { color: var(--text); border-color: var(--text); background: var(--bg2); }
+    .color-btn .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
     .logo-card { border-radius: 16px; border: 1px solid var(--border); overflow: hidden; transition: .3s ease; }
     .logo-card:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,.4); }
-    .logo-preview { height: 160px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .logo-preview { height: 180px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
     .logo-preview.dark-bg { background: var(--card); }
     .logo-preview.light-bg { background: #f5f5f5; }
-    .logo-preview.gradient-bg { background: linear-gradient(135deg, var(--coral-s), var(--coral-e)); }
-    .logo-preview img { max-width: 80px; max-height: 80px; }
+    .logo-preview img { max-width: 90px; max-height: 90px; }
     .logo-meta { padding: .75rem 1rem; background: var(--bg2); border-top: 1px solid var(--border); }
     .logo-meta h4 { font-size: .85rem; font-weight: 600; margin-bottom: 2px; }
     .logo-meta p { font-size: .75rem; color: var(--text3); }
-
-    /* Color Palette */
+    .variant-set { display: none; }
+    .variant-set.active { display: block; }
     .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
     .color-card { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
     .color-swatch { height: 100px; }
     .color-info { padding: 1rem; background: var(--bg2); }
     .color-info h4 { font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
     .color-info code { font-size: .8rem; color: var(--text2); background: var(--card); padding: 2px 6px; border-radius: 4px; }
-
-    /* Typography */
     .type-demo { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; margin-bottom: 1.5rem; }
     .type-demo h3 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: .5rem; }
     .type-demo .slogan { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.02em; background: linear-gradient(135deg, var(--coral-s), var(--coral-e)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .type-meta { display: flex; gap: 2rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .type-meta { display: flex; gap: 2rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
     .type-meta div { font-size: .85rem; color: var(--text2); }
     .type-meta strong { color: var(--text); display: block; margin-bottom: 2px; }
-
-    /* Rules */
     .rules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
     .rule-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
     .rule-card .icon { font-size: 1.8rem; margin-bottom: .75rem; }
@@ -78,80 +70,86 @@
     .rule-card p { font-size: .85rem; color: var(--text2); }
     .rule-card.do { border-left: 3px solid #4CAF50; }
     .rule-card.dont { border-left: 3px solid #EF5350; }
-
-    /* Footer */
     .brand-footer { padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 3rem; text-align: center; }
     .brand-footer p { font-size: .85rem; color: var(--text3); }
-
-    @media (max-width: 768px) {
-      .logo-grid, .palette-grid, .rules-grid { grid-template-columns: 1fr 1fr; }
-      .type-meta { flex-direction: column; gap: 1rem; }
-    }
-    @media (max-width: 480px) {
-      .logo-grid, .palette-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .logo-grid, .palette-grid, .rules-grid { grid-template-columns: 1fr 1fr; } .type-meta { flex-direction: column; gap: 1rem; } }
+    @media (max-width: 480px) { .logo-grid, .palette-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header class="brand-header">
     <div class="container">
       <a href="index.html" class="logo">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><defs><linearGradient id="b-bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4906E"/><stop offset="1" stop-color="#E8699A"/></linearGradient><linearGradient id="b-sh" x1="100" y1="56" x2="100" y2="144" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity=".3"/></linearGradient></defs><path d="M100,14 C152,14 186,48 186,100 C186,152 152,186 100,186 C48,186 14,152 14,100 C14,48 48,14 100,14Z" fill="url(#b-bg)"/><path d="M65,62 L65,138 L102,100Z" fill="#fff"/><path d="M100,62 L134,62 C137.3,62 140,64.7 140,68 L140,132 C140,135.3 137.3,138 134,138 L100,138Z" fill="url(#b-sh)"/></svg>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><defs><linearGradient id="b-bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4906E"/><stop offset="1" stop-color="#E8699A"/></linearGradient><linearGradient id="b-fade" x1="156.2" y1="101" x2="84.9" y2="101" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient></defs><path d="M100,0 C25.2,0 0,25.2 0,100 C0,174.8 25.2,200 100,200 C174.8,200 200,174.8 200,100 C200,25.2 174.9,0 100,0Z" fill="url(#b-bg)"/><path d="M89.6,112.7 C83.2,106.3 83.2,95.9 89.6,89.5 L128.2,50.9 C138.5,40.6 156.2,47.9 156.2,62.5 V139.7 C156.2,154.3 138.5,161.7 128.2,151.3Z" fill="url(#b-fade)"/><path d="M112.7,112.7 C119.1,106.3 119.1,95.9 112.7,89.5 L74.1,50.9 C63.9,40.6 46.2,47.9 46.2,62.5 V139.7 C46.2,154.3 63.9,161.7 74.1,151.3Z" fill="#fff"/></svg>
         <span class="logo-wordmark">moneetize</span>
       </a>
-      <a href="index.html" class="back-link">← Back to Marketplace</a>
+      <a href="index.html" class="back-link">&larr; Back to Marketplace</a>
     </div>
   </header>
-
   <section class="brand-hero">
     <div class="container">
       <h1>Brand <span>Assets</span></h1>
       <p>Official Moneetize logo variants, color palette, typography, and usage guidelines for consistent brand representation.</p>
     </div>
   </section>
-
   <main class="container">
-
-    <!-- ICON VARIANTS -->
     <section class="section">
       <h2 class="section-title">Icon Variants</h2>
-      <p class="section-desc">The Moneetize icon mark in all available color modes. Use the coral variant as the primary default.</p>
-      <div class="logo-grid">
-        <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-coral.svg" alt="Coral Icon"></div><div class="logo-meta"><h4>Coral (Primary)</h4><p>icon-coral.svg</p></div></div>
-        <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-blue.svg" alt="Blue Icon"></div><div class="logo-meta"><h4>Blue / Indigo</h4><p>icon-blue.svg</p></div></div>
-        <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-teal.svg" alt="Teal Icon"></div><div class="logo-meta"><h4>Teal / Mint</h4><p>icon-teal.svg</p></div></div>
-        <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-green.svg" alt="Green Icon"></div><div class="logo-meta"><h4>Green / Lime</h4><p>icon-green.svg</p></div></div>
-        <div class="logo-card"><div class="logo-preview light-bg"><img src="assets/logos/icon-black.svg" alt="Black Icon"></div><div class="logo-meta"><h4>Black (Mono)</h4><p>icon-black.svg</p></div></div>
-        <div class="logo-card"><div class="logo-preview gradient-bg"><img src="assets/logos/icon-white.svg" alt="White Icon"></div><div class="logo-meta"><h4>White (Cutout)</h4><p>icon-white.svg</p></div></div>
+      <p class="section-desc">The Moneetize icon mark in all available color modes. Select a variant below.</p>
+      <div class="color-selector">
+        <button class="color-btn active" onclick="showVariant('bw',this)"><span class="dot" style="background:#1C1C1E"></span>Black &amp; White</button>
+        <button class="color-btn" onclick="showVariant('coral',this)"><span class="dot" style="background:linear-gradient(135deg,#F4906E,#E8699A)"></span>Coral</button>
+        <button class="color-btn" onclick="showVariant('blue',this)"><span class="dot" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)"></span>Blue</button>
+        <button class="color-btn" onclick="showVariant('teal',this)"><span class="dot" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)"></span>Teal</button>
+        <button class="color-btn" onclick="showVariant('green',this)"><span class="dot" style="background:linear-gradient(135deg,#8BD44E,#C6E040)"></span>Green</button>
+      </div>
+      <div class="variant-set active" id="variant-bw">
+        <div class="logo-grid">
+          <div class="logo-card"><div class="logo-preview light-bg"><img src="assets/logos/icon-black.svg" alt="Black Icon"></div><div class="logo-meta"><h4>Black (Mono)</h4><p>icon-black.svg &mdash; for light backgrounds</p></div></div>
+          <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-white.svg" alt="White Icon"></div><div class="logo-meta"><h4>White (Cutout)</h4><p>icon-white.svg &mdash; for dark backgrounds</p></div></div>
+        </div>
+      </div>
+      <div class="variant-set" id="variant-coral">
+        <div class="logo-grid">
+          <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-coral.svg" alt="Coral Icon"></div><div class="logo-meta"><h4>Coral / Pink (Primary)</h4><p>icon-coral.svg</p></div></div>
+        </div>
+      </div>
+      <div class="variant-set" id="variant-blue">
+        <div class="logo-grid">
+          <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-blue.svg" alt="Blue Icon"></div><div class="logo-meta"><h4>Blue / Indigo</h4><p>icon-blue.svg</p></div></div>
+        </div>
+      </div>
+      <div class="variant-set" id="variant-teal">
+        <div class="logo-grid">
+          <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-teal.svg" alt="Teal Icon"></div><div class="logo-meta"><h4>Teal / Mint</h4><p>icon-teal.svg</p></div></div>
+        </div>
+      </div>
+      <div class="variant-set" id="variant-green">
+        <div class="logo-grid">
+          <div class="logo-card"><div class="logo-preview dark-bg"><img src="assets/logos/icon-green.svg" alt="Green Icon"></div><div class="logo-meta"><h4>Green / Lime</h4><p>icon-green.svg</p></div></div>
+        </div>
       </div>
     </section>
-
     <hr>
-
-    <!-- COLOR PALETTE -->
     <section class="section">
       <h2 class="section-title">Color Palette</h2>
-      <p class="section-desc">The official Moneetize brand gradient palette. Each variant pairs two harmonious colors in a 135° linear gradient.</p>
+      <p class="section-desc">The official Moneetize brand gradient palette.</p>
       <div class="palette-grid">
-        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#F4906E,#E8699A)"></div><div class="color-info"><h4>Coral / Pink (Primary)</h4><code>#F4906E → #E8699A</code></div></div>
-        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)"></div><div class="color-info"><h4>Blue / Indigo</h4><code>#7B8EF6 → #6366F1</code></div></div>
-        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)"></div><div class="color-info"><h4>Teal / Mint</h4><code>#7DD3E6 → #6ECDB4</code></div></div>
-        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#8BD44E,#C6E040)"></div><div class="color-info"><h4>Green / Lime</h4><code>#8BD44E → #C6E040</code></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#F4906E,#E8699A)"></div><div class="color-info"><h4>Coral / Pink (Primary)</h4><code>#F4906E &rarr; #E8699A</code></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)"></div><div class="color-info"><h4>Blue / Indigo</h4><code>#7B8EF6 &rarr; #6366F1</code></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)"></div><div class="color-info"><h4>Teal / Mint</h4><code>#7DD3E6 &rarr; #6ECDB4</code></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:linear-gradient(135deg,#8BD44E,#C6E040)"></div><div class="color-info"><h4>Green / Lime</h4><code>#8BD44E &rarr; #C6E040</code></div></div>
         <div class="color-card"><div class="color-swatch" style="background:#1C1C1E"></div><div class="color-info"><h4>Brand Black</h4><code>#1C1C1E</code></div></div>
         <div class="color-card"><div class="color-swatch" style="background:#fff;border-bottom:1px solid #eee"></div><div class="color-info"><h4>Brand White</h4><code>#FFFFFF</code></div></div>
       </div>
     </section>
-
     <hr>
-
-    <!-- TYPOGRAPHY -->
     <section class="section">
       <h2 class="section-title">Typography</h2>
       <p class="section-desc">The Moneetize brand uses Nunito Black as its official wordmark typeface.</p>
       <div class="type-demo">
         <h3>moneetize</h3>
-        <div class="slogan">SPENDING… WITH BENEFITS</div>
+        <div class="slogan">Spending&hellip; with benefits</div>
         <div class="type-meta">
           <div><strong>Font Family</strong>Nunito (Google Fonts)</div>
           <div><strong>Wordmark Weight</strong>900 (Black)</div>
@@ -160,30 +158,32 @@
         </div>
       </div>
     </section>
-
     <hr>
-
-    <!-- USAGE RULES -->
     <section class="section">
       <h2 class="section-title">Usage Guidelines</h2>
       <p class="section-desc">Follow these rules to maintain brand consistency across all touchpoints.</p>
       <div class="rules-grid">
-        <div class="rule-card do"><div class="icon">✅</div><h4>Use icon-only for small placements</h4><p>Product watermarks, favicons, and app icons should use the icon mark without the wordmark.</p></div>
-        <div class="rule-card do"><div class="icon">✅</div><h4>Use horizontal for navigation</h4><p>Header bars and sidebars should use icon + wordmark in a horizontal layout.</p></div>
-        <div class="rule-card do"><div class="icon">✅</div><h4>Use message lockup for hero areas</h4><p>Landing pages and marketing materials should include icon + wordmark + slogan.</p></div>
-        <div class="rule-card do"><div class="icon">✅</div><h4>Maintain clear space</h4><p>Always maintain padding equal to 0.5× the icon width around all logo variants.</p></div>
-        <div class="rule-card dont"><div class="icon">❌</div><h4>Don’t stretch or distort</h4><p>Never alter the aspect ratio or apply non-uniform scaling to any logo variant.</p></div>
-        <div class="rule-card dont"><div class="icon">❌</div><h4>Don’t use low contrast</h4><p>Avoid placing colored icons on similarly-colored backgrounds. Use white or black variants instead.</p></div>
+        <div class="rule-card do"><div class="icon">&#x2705;</div><h4>Use icon-only for small placements</h4><p>Product watermarks, favicons, and app icons should use the icon mark without the wordmark.</p></div>
+        <div class="rule-card do"><div class="icon">&#x2705;</div><h4>Use horizontal for navigation</h4><p>Header bars and sidebars should use icon + wordmark in a horizontal layout.</p></div>
+        <div class="rule-card do"><div class="icon">&#x2705;</div><h4>Use message lockup for hero areas</h4><p>Landing pages and marketing materials should include icon + wordmark + slogan.</p></div>
+        <div class="rule-card do"><div class="icon">&#x2705;</div><h4>Maintain clear space</h4><p>Always maintain padding equal to 0.5&times; the icon width around all logo variants.</p></div>
+        <div class="rule-card dont"><div class="icon">&#x274C;</div><h4>Don&rsquo;t stretch or distort</h4><p>Never alter the aspect ratio or apply non-uniform scaling to any logo variant.</p></div>
+        <div class="rule-card dont"><div class="icon">&#x274C;</div><h4>Don&rsquo;t use low contrast</h4><p>Avoid placing colored icons on similarly-colored backgrounds. Use white or black variants instead.</p></div>
       </div>
     </section>
-
   </main>
-
   <footer class="brand-footer">
     <div class="container">
-      <p>© 2026 Moneetize. All brand assets are proprietary. Contact brand@moneetize.com for usage inquiries.</p>
+      <p>&copy; 2026 Moneetize. All brand assets are proprietary. Contact brand@moneetize.com for usage inquiries.</p>
     </div>
   </footer>
-
+  <script>
+    function showVariant(variant, btn) {
+      document.querySelectorAll('.variant-set').forEach(function(el) { el.classList.remove('active'); });
+      document.querySelectorAll('.color-btn').forEach(function(el) { el.classList.remove('active'); });
+      document.getElementById('variant-' + variant).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
 </body>
 </html>
