@@ -41,6 +41,18 @@
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Outfit', 'Inter', sans-serif;
+  --font-brand: 'Nunito', 'Outfit', sans-serif;
+
+  /* Brand Identity */
+  --brand-coral-start: #F4906E;
+  --brand-coral-end: #E8699A;
+  --brand-blue-start: #7B8EF6;
+  --brand-blue-end: #6366F1;
+  --brand-teal-start: #7DD3E6;
+  --brand-teal-end: #6ECDB4;
+  --brand-green-start: #8BD44E;
+  --brand-green-end: #C6E040;
+  --brand-black: #1C1C1E;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -199,6 +211,33 @@ ul { list-style: none; }
   height: 36px;
   width: auto;
   object-fit: contain;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
+.logo-wordmark {
+  font-family: var(--font-brand);
+  font-weight: 900;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.brand-slogan {
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--brand-coral-start), var(--brand-coral-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-sm);
 }
 
 .nav-links {
@@ -554,10 +593,10 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   bottom: 32px;
-  right: 6px;
-  width: 60px;
-  height: 16px;
-  background: url('logo-white.svg') center / contain no-repeat;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  background: url('assets/logos/icon-white.svg') center / contain no-repeat;
   opacity: 0.45;
   z-index: 2;
   pointer-events: none;
@@ -829,10 +868,9 @@ ul { list-style: none; }
   position: absolute;
   bottom: 10px;
   right: 10px;
-  width: 90px;
-  height: 22px;
-  background: url('logo-white.svg') center / contain no-repeat;
-  background-size: 90px auto;
+  width: 28px;
+  height: 28px;
+  background: url('assets/logos/icon-white.svg') center / contain no-repeat;
   opacity: 0.55;
   z-index: 2;
   pointer-events: none;
