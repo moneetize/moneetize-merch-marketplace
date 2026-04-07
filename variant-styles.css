@@ -1,0 +1,84 @@
+/* ---- Variant Selector Styles ---- */
+
+.variant-selectors {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.variant-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.variant-group label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 36px;
+}
+
+.variant-swatches {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  position: relative;
+  outline: none;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+  border-color: var(--text-muted);
+}
+
+.swatch.active {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 2px var(--bg-card), 0 0 0 4px var(--accent-green);
+}
+
+.swatch-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.swatch-logo:hover {
+  transform: scale(1.15);
+  border-color: var(--text-muted);
+}
+
+.swatch-logo.active {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 1px var(--bg-card), 0 0 0 3px var(--accent-green);
+}
+
+/* White swatch needs a border to be visible on dark bg */
+.swatch[data-variant="white"],
+.swatch-logo[data-logo="white"] {
+  border-color: var(--border-light);
+}
+
+.swatch[data-variant="white"].active {
+  border-color: var(--accent-green);
+}
+
+.swatch-logo[data-logo="white"].active {
+  border-color: var(--accent-green);
+}
