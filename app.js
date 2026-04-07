@@ -25,12 +25,10 @@ function initHeader() {
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileClose');
 
-  // Scroll-based header style
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Mobile menu
   mobileToggle.addEventListener('click', () => {
     mobileMenu.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -71,7 +69,6 @@ function initSearch() {
     }
   });
 
-  // Live search filtering
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
     const products = document.querySelectorAll('.product-card');
@@ -91,12 +88,10 @@ function closeSearch() {
 
 // ===== CATEGORY FILTER =====
 function filterCategory(category) {
-  // Update active category card
   document.querySelectorAll('.category-card').forEach(card => {
     card.classList.toggle('active', card.dataset.category === category);
   });
 
-  // Filter product cards
   const products = document.querySelectorAll('.product-card');
   products.forEach(card => {
     if (category === 'all') {
@@ -109,7 +104,6 @@ function filterCategory(category) {
 
 // ===== PRODUCT TAG FILTER =====
 function filterProducts(tag) {
-  // Update active filter tab
   document.querySelectorAll('.filter-tab').forEach(tab => {
     tab.classList.toggle('active', tab.dataset.filter === tag);
   });
@@ -128,12 +122,10 @@ function filterProducts(tag) {
 function switchCurrency(currency) {
   currentCurrency = currency;
 
-  // Update active button
   document.querySelectorAll('.currency-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.currency === currency);
   });
 
-  // Update all prices
   document.querySelectorAll('.price').forEach(priceEl => {
     const usd = priceEl.dataset.usd;
     const tripto = priceEl.dataset.tripto;
@@ -152,7 +144,6 @@ function switchCurrency(currency) {
     }
   });
 
-  // Update alt prices
   document.querySelectorAll('.price-alt').forEach((alt, i) => {
     const priceEl = document.querySelectorAll('.price')[i];
     const tripto = priceEl.dataset.tripto;
@@ -172,6 +163,50 @@ function switchCurrency(currency) {
   });
 
   updateCartTotal();
+}
+
+// ===== VARIANT SELECTORS =====
+
+function selectGarmentColor(btn) {
+  const swatchGroup = btn.closest('.variant-swatches');
+  swatchGroup.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Update the product image
+  const targetId = swatchGroup.dataset.target;
+  const basePath = swatchGroup.dataset.base;
+  const variant = btn.dataset.variant;
+  const imgEl = document.getElementById(targetId);
+
+  if (imgEl && basePath) {
+    // Default (black) uses the base name; variants use base-color.png
+    if (variant === 'black') {
+      imgEl.src = basePath + '.png';
+    } else {
+      imgEl.src = basePath + '-' + variant + '.png';
+    }
+  }
+
+  // Also update the add-to-cart button's image reference
+  const card = btn.closest('.product-card');
+  if (card) {
+    const addBtn = card.querySelector('.btn-add-cart');
+    if (addBtn && imgEl) {
+      addBtn.setAttribute('data-current-img', imgEl.src);
+    }
+  }
+}
+
+function selectLogoColor(btn) {
+  const swatchGroup = btn.closest('.variant-swatches');
+  swatchGroup.querySelectorAll('.swatch-logo').forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Store the selected logo color on the card for addToCart
+  const card = btn.closest('.product-card');
+  if (card) {
+    card.setAttribute('data-selected-logo', btn.dataset.logo);
+  }
 }
 
 // ===== CART =====
@@ -197,25 +232,55 @@ function closeCart() {
   document.body.style.overflow = '';
 }
 
-function addToCart(name, price, image) {
+function addToCart(name, price, image, btnEl) {
+  // Get variant selections
+  const card = btnEl ? btnEl.closest('.product-card') : null;
+  let variantLabel = '';
+  let actualImage = image;
+
+  if (card) {
+    // Get garment color
+    const garmentSwatch = card.querySelector('.garment-swatches .swatch.active');
+    const garmentColor = garmentSwatch ? garmentSwatch.title : '';
+
+    // Get logo color
+    const logoSwatch = card.querySelector('.logo-swatches .swatch-logo.active');
+    const logoColor = logoSwatch ? logoSwatch.title : '';
+
+    if (garmentColor || logoColor) {
+      const parts = [];
+      if (garmentColor) parts.push(garmentColor);
+      if (logoColor && logoColor !== 'White') parts.push(logoColor + ' Logo');
+      if (parts.length) variantLabel = ' (' + parts.join(', ') + ')';
+    }
+
+    // Get current image from the card
+    const cardImg = card.querySelector('.product-image img');
+    if (cardImg) actualImage = cardImg.src;
+  }
+
+  const fullName = name + variantLabel;
+
   // Check if already in cart
-  const existing = cart.find(item => item.name === name);
+  const existing = cart.find(item => item.name === fullName);
   if (existing) {
     existing.qty++;
   } else {
-    cart.push({ name, price, image, qty: 1 });
+    cart.push({ name: fullName, price, image: actualImage, qty: 1 });
   }
 
   updateCartUI();
   showToast(`${name} added to cart! 🛒`);
 
   // Animate the add button
-  event.target.classList.add('added');
-  event.target.textContent = '✓ Added';
-  setTimeout(() => {
-    event.target.classList.remove('added');
-    event.target.textContent = '+ Add';
-  }, 1500);
+  if (btnEl) {
+    btnEl.classList.add('added');
+    btnEl.textContent = '✓ Added';
+    setTimeout(() => {
+      btnEl.classList.remove('added');
+      btnEl.textContent = '+ Add';
+    }, 1500);
+  }
 }
 
 function removeFromCart(index) {
@@ -299,10 +364,8 @@ function initTestimonials() {
 
   dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
 
-  // Autoplay
   testimonialAutoplay = setInterval(() => goToSlide(currentTestimonial + 1), 5000);
 
-  // Pause on interaction
   [prev, next, ...dots].forEach(el => {
     el.addEventListener('click', () => {
       clearInterval(testimonialAutoplay);
@@ -313,7 +376,6 @@ function initTestimonials() {
 
 // ===== COUNTDOWN =====
 function initCountdown() {
-  // Countdown target: 3 days from page load
   const target = new Date();
   target.setDate(target.getDate() + 3);
 

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="variant-styles.css">
 </head>
 <body>
 
@@ -232,70 +233,152 @@
 
       <div class="products-grid" id="productsGrid">
         <!-- ===== APPAREL ===== -->
-        <div class="product-card reveal" data-category="apparel" data-tag="new">
+        <div class="product-card reveal" data-category="apparel" data-tag="new" data-product-id="classic-tee">
           <div class="product-image">
-            <img src="images/tshirt.png" alt="Classic Logo Tee">
+            <img src="images/tshirt.png" alt="Classic Logo Tee" id="img-classic-tee">
             <span class="product-badge new">New</span>
             <button class="product-wishlist" aria-label="Wishlist">♡</button>
           </div>
           <div class="product-info">
             <h3>Classic Logo Tee</h3>
             <p class="product-desc">Premium cotton tee with embroidered Moneetize logo</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Color</label>
+                <div class="variant-swatches garment-swatches" data-target="img-classic-tee" data-base="images/tshirt">
+                  <button class="swatch active" data-variant="black" style="background:#1a1a1a" title="Black" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="white" style="background:#f5f5f5" title="White" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="navy" style="background:#1e3a5f" title="Navy" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="gray" style="background:#888" title="Gray" onclick="selectGarmentColor(this)"></button>
+                </div>
+              </div>
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="teal" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)" title="Teal" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(128)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="29.99" data-tripto="150" data-usdt="29.99">$29.99</span><span class="price-alt">≈ 150 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Classic Logo Tee', 29.99, 'images/tshirt.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Classic Logo Tee', 29.99, 'images/tshirt.png', this)">+ Add</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="apparel" data-tag="hot">
+        <div class="product-card reveal" data-category="apparel" data-tag="hot" data-product-id="sig-hoodie">
           <div class="product-image">
-            <img src="images/hoodie.png" alt="Signature Hoodie">
+            <img src="images/hoodie.png" alt="Signature Hoodie" id="img-sig-hoodie">
             <span class="product-badge hot">Hot</span>
             <button class="product-wishlist" aria-label="Wishlist">♡</button>
           </div>
           <div class="product-info">
             <h3>Signature Hoodie</h3>
             <p class="product-desc">Heavyweight fleece hoodie with chest logo</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Color</label>
+                <div class="variant-swatches garment-swatches" data-target="img-sig-hoodie" data-base="images/hoodie">
+                  <button class="swatch active" data-variant="black" style="background:#1a1a1a" title="Black" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="white" style="background:#f5f5f5" title="White" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="navy" style="background:#1e3a5f" title="Navy" onclick="selectGarmentColor(this)"></button>
+                </div>
+              </div>
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="teal" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)" title="Teal" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(96)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="59.99" data-tripto="300" data-usdt="59.99">$59.99</span><span class="price-alt">≈ 300 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Signature Hoodie', 59.99, 'images/hoodie.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Signature Hoodie', 59.99, 'images/hoodie.png', this)">+ Add</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="apparel" data-tag="sale">
+        <div class="product-card reveal" data-category="apparel" data-tag="sale" data-product-id="oversized-tee">
           <div class="product-image">
-            <img src="images/tshirt.png" alt="Oversized Logo Tee">
+            <img src="images/tshirt.png" alt="Oversized Logo Tee" id="img-oversized-tee">
             <span class="product-badge sale">Sale</span>
             <button class="product-wishlist" aria-label="Wishlist">♡</button>
           </div>
           <div class="product-info">
             <h3>Oversized Logo Tee</h3>
             <p class="product-desc">Relaxed fit tee with oversized back print</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Color</label>
+                <div class="variant-swatches garment-swatches" data-target="img-oversized-tee" data-base="images/tshirt">
+                  <button class="swatch active" data-variant="black" style="background:#1a1a1a" title="Black" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="white" style="background:#f5f5f5" title="White" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="navy" style="background:#1e3a5f" title="Navy" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="gray" style="background:#888" title="Gray" onclick="selectGarmentColor(this)"></button>
+                </div>
+              </div>
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="teal" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)" title="Teal" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(67)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="34.99" data-tripto="175" data-usdt="34.99">$34.99</span><span class="price-alt">≈ 175 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Oversized Logo Tee', 34.99, 'images/tshirt.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Oversized Logo Tee', 34.99, 'images/tshirt.png', this)">+ Add</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="apparel" data-tag="hot">
+        <div class="product-card reveal" data-category="apparel" data-tag="hot" data-product-id="zip-hoodie">
           <div class="product-image">
-            <img src="images/hoodie.png" alt="Zip-Up Hoodie">
+            <img src="images/hoodie.png" alt="Zip-Up Hoodie" id="img-zip-hoodie">
             <span class="product-badge hot">Hot</span>
             <button class="product-wishlist" aria-label="Wishlist">♡</button>
           </div>
           <div class="product-info">
             <h3>Zip-Up Hoodie</h3>
             <p class="product-desc">Full-zip hoodie with dual pockets & logo</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Color</label>
+                <div class="variant-swatches garment-swatches" data-target="img-zip-hoodie" data-base="images/hoodie">
+                  <button class="swatch active" data-variant="black" style="background:#1a1a1a" title="Black" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="white" style="background:#f5f5f5" title="White" onclick="selectGarmentColor(this)"></button>
+                  <button class="swatch" data-variant="navy" style="background:#1e3a5f" title="Navy" onclick="selectGarmentColor(this)"></button>
+                </div>
+              </div>
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="teal" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)" title="Teal" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(89)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="64.99" data-tripto="325" data-usdt="64.99">$64.99</span><span class="price-alt">≈ 325 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Zip-Up Hoodie', 64.99, 'images/hoodie.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Zip-Up Hoodie', 64.99, 'images/hoodie.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -310,10 +393,22 @@
           <div class="product-info">
             <h3>Logo Snapback Cap</h3>
             <p class="product-desc">Adjustable snapback with embroidered logo</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="teal" style="background:linear-gradient(135deg,#7DD3E6,#6ECDB4)" title="Teal" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(112)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="24.99" data-tripto="125" data-usdt="24.99">$24.99</span><span class="price-alt">≈ 125 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Logo Snapback Cap', 24.99, 'images/cap.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Logo Snapback Cap', 24.99, 'images/cap.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -327,10 +422,20 @@
           <div class="product-info">
             <h3>Logo Knit Beanie</h3>
             <p class="product-desc">Soft-knit beanie with woven logo patch</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(58)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="19.99" data-tripto="100" data-usdt="19.99">$19.99</span><span class="price-alt">≈ 100 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Logo Knit Beanie', 19.99, 'images/beanie.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Logo Knit Beanie', 19.99, 'images/beanie.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -345,10 +450,20 @@
           <div class="product-info">
             <h3>Branded Ceramic Mug</h3>
             <p class="product-desc">12 oz ceramic mug with full wrap design</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="green" style="background:linear-gradient(135deg,#8BD44E,#C6E040)" title="Green" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★☆</span><span class="count">(74)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="14.99" data-tripto="75" data-usdt="14.99">$14.99</span><span class="price-alt">≈ 75 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Branded Ceramic Mug', 14.99, 'images/mug.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Branded Ceramic Mug', 14.99, 'images/mug.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -365,7 +480,7 @@
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(43)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="34.99" data-tripto="175" data-usdt="34.99">$34.99</span><span class="price-alt">≈ 175 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Insulated Thermal Bottle', 34.99, 'images/thermal.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Insulated Thermal Bottle', 34.99, 'images/thermal.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -383,7 +498,7 @@
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(87)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="9.99" data-tripto="50" data-usdt="9.99">$9.99</span><span class="price-alt">≈ 50 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Metal Logo Keychain', 9.99, 'images/keychain.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Metal Logo Keychain', 9.99, 'images/keychain.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -400,7 +515,7 @@
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(143)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="6.99" data-tripto="35" data-usdt="6.99">$6.99</span><span class="price-alt">≈ 35 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Vinyl Sticker Pack', 6.99, 'images/stickers.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Vinyl Sticker Pack', 6.99, 'images/stickers.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -418,7 +533,7 @@
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(52)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="5.99" data-tripto="30" data-usdt="5.99">$5.99</span><span class="price-alt">≈ 30 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Die-Cut Fridge Magnet', 5.99, 'images/magnet.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Die-Cut Fridge Magnet', 5.99, 'images/magnet.png', this)">+ Add</button>
             </div>
           </div>
         </div>
@@ -433,10 +548,20 @@
           <div class="product-info">
             <h3>Logo Phone Case</h3>
             <p class="product-desc">Shockproof case — iPhone & Samsung</p>
+            <div class="variant-selectors">
+              <div class="variant-group">
+                <label>Logo</label>
+                <div class="variant-swatches logo-swatches">
+                  <button class="swatch-logo active" data-logo="white" style="background:#fff" title="White" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="coral" style="background:linear-gradient(135deg,#F4906E,#E8699A)" title="Coral" onclick="selectLogoColor(this)"></button>
+                  <button class="swatch-logo" data-logo="blue" style="background:linear-gradient(135deg,#7B8EF6,#6366F1)" title="Blue" onclick="selectLogoColor(this)"></button>
+                </div>
+              </div>
+            </div>
             <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(91)</span></div>
             <div class="product-pricing">
               <div><span class="price" data-usd="19.99" data-tripto="100" data-usdt="19.99">$19.99</span><span class="price-alt">≈ 100 Tripto Tokens</span></div>
-              <button class="btn-add-cart" onclick="addToCart('Logo Phone Case', 19.99, 'images/phonecase.png')">+ Add</button>
+              <button class="btn-add-cart" onclick="addToCart('Logo Phone Case', 19.99, 'images/phonecase.png', this)">+ Add</button>
             </div>
           </div>
         </div>
